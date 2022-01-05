@@ -15,8 +15,8 @@ fetch('https://rickandmortyapi.com/api/character/')
     if (element.status == 'unknown') { html += '<span class="circle unknown"></span>'}
     else if (element.status == 'Alive') {html +='<span class="circle alive"></span>'}
     else {html +='<span class="circle dead"></span>'}
-    html +=`<span>${element.status} - ${element.species}</span></div>
-                <span>${element.gender}</span>
+    html +=`<span>${element.status} - ${element.species} - ${element.gender}</span></div>
+                
                 <span>From ${element.location.name}</span>
             </div>
       </article>`;
