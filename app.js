@@ -1,6 +1,7 @@
 
-
-fetch('https://rickandmortyapi.com/api/character/')
+function callData(page) {
+  document.querySelector(".card-container").innerHTML = '';
+  fetch('https://rickandmortyapi.com/api/character/?page='+page)
   .then(response => response.json())
   .then(data => data.results.forEach( function (element, index, array) {
     console.log(element);  
@@ -22,6 +23,20 @@ fetch('https://rickandmortyapi.com/api/character/')
       </article>`;
     document.querySelector(".card-container").innerHTML += html; }))
     .catch(error => console.log(error));
-      
+}
+
+function callPagination() {
+  var pagination = '';
+  for(let i = 1; i <= 42; i++) {
+    pagination += `<a href="#" onclick="callData(${i})" class="page">${i}</a>`
+  }
+  document.querySelector(".pagination").innerHTML = pagination;
+}
+
+window.onload = function() {
+  callData(1);
+  callPagination();
+};
+
     
 

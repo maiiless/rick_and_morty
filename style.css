@@ -149,11 +149,13 @@ body {
     margin-bottom: 10px;
 }
 
-.numbering ul {
+.pagination {
+
     display: flex;
+    margin-bottom: 10px;
 }
 
-.numbering ul li{
+.page{
     list-style: none;
     border: 1px solid white;
     border-radius: 10px;
@@ -161,9 +163,10 @@ body {
     padding: 10px;
     background-color: white;
     color: #253031;
+    text-decoration: none;
 }
 
-.numbering ul li:hover {
+.page:hover {
     background-color: #ee6c4d;
     color: white;
 }
